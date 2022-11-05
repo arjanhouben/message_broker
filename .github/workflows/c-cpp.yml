@@ -1,0 +1,22 @@
+name: C/C++ CI
+
+on:
+  push:
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v3
+    - name: prepare
+      run: mkdir build
+    - name: configure
+      run: cmake -S . -B build
+    - name: make
+      run: make
+      working-directory: build
+    - name: test
+      run: ctest
+      working-directory: build

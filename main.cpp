@@ -1,3 +1,4 @@
+#include <functional>
 #include "arjan/message_broker.hpp"
 #include <catch2/catch_test_macros.hpp>
 
