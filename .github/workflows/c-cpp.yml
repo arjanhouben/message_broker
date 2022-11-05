@@ -1,21 +1,21 @@
 name: C/C++ CI
 
 on:
-	push:
-		branches: [ "main" ]
-	pull_request:
-		branches: [ "main" ]
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
 jobs:
-	build:
-		runs-on: ubuntu-latest
-		steps:
-		- uses: actions/checkout@v3
-		- name: prepare
-			run: mkdir build
-		- name: configure
-			run: cmake -S . -B build
-		- name: make
-			run: make
-		- name: test
-			run: ctest
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: prepare
+      run: mkdir build
+    - name: configure
+      run: cmake -S . -B build
+    - name: make
+      run: make
+    - name: test
+      run: ctest
